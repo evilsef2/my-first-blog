@@ -15,6 +15,9 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -25,7 +28,10 @@ SECRET_KEY = '&f!t!uv@11g4=v0_(3x^f!s+d@c$-_55$0o3)1u-dtybh7sqtb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'evilsef2.pythonanywhere.com',
+    'localhost',
+]
 
 SITE_ID = 1
 
@@ -40,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'blog',
+    #'disqus',
 ]
 
 MIDDLEWARE = [

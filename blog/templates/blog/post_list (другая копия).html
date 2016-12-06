@@ -1,0 +1,20 @@
+ {% extends 'blog/base.html' %}
+ <h1><a href="{% url 'mysite:post_new' pk=post.pk %}">{{ post.title }}</a></h1>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<div>
+    <h1><a href="/">Sef's Blog</a></h1>
+</div>
+{% block content %}
+    {% for post in object_list %}
+        <p>{{ post.datetime }}</p>
+        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.content }}</p>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p>опубликовано: {{ post.datetime }}</p>
+        
+    {% empty %}
+    <p>Нет постов</p>
+    {% endfor %}
+
+{% endblock %}

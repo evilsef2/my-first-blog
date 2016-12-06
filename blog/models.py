@@ -2,6 +2,8 @@
 from django.db import models
 
 class Post(models.Model):
+    author = models.ForeignKey('auth.User')
+    text = models.TextField()
     title = models.CharField(max_length=255) # заголовок поста
     datetime = models.DateTimeField(u'Дата публикации') # дата публикации
     content = models.TextField(max_length=10000) # текст поста
