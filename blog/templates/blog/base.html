@@ -9,6 +9,7 @@
     </head>
     <body>
         <div class="page-header">
+            
             <h1><a href="/">Sef's Blog</a></h1>
         </div>
         <div class="content container">
@@ -16,6 +17,9 @@
                 <div class="col-md-8">
                 {% block content %}
                 {% endblock %}
+                <ul class="nav">
+                    <li><a href="{% url 'list' %}" class="">Список постов</a></li>
+                </ul>
                 </div>
             </div>
         </div>
